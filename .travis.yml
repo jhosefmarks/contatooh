@@ -4,7 +4,7 @@ notifications:
     email: jhosef@gmail.com
 
 node_js:
-    - "iojs"
+    - "5.0"
 
 services:
     - mongodb
