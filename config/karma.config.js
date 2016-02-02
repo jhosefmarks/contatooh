@@ -1,4 +1,4 @@
-// Karma configuration
+﻿// Karma configuration
 // Generated on Wed Jan 13 2016 23:59:25 GMT-0200 (Horário brasileiro de verão)
 
 /*global module */
@@ -56,7 +56,7 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['Chrome'],
+        browsers: ['Chrome', 'PhantomJS'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
