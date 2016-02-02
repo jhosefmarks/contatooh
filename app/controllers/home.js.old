@@ -1,0 +1,14 @@
+/*globals module */
+
+module.exports = function () {
+    'use strict';
+
+    var controller = {};
+
+    controller.index = function (req, res) {
+        // retorna a página index.ejs
+        res.render('index', {nome: 'Contatoh'});
+    };
+
+    return controller;
+};

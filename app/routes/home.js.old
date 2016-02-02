@@ -1,0 +1,12 @@
+/*globals module */
+
+//var controller = require('../controllers/home')();
+
+module.exports = function (app) {
+    'use strict';
+
+    var controller = app.controllers.home;
+
+    //app.get('/index', controller.index);
+    app.get('/', controller.index);
+};
