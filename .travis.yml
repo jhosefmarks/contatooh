@@ -31,4 +31,5 @@ before_script:
 
 script:
     - karma start config/karma.config.js --single-run --browsers PhantomJS
-    - node server &
+    - node server &H+$1pnmdq2v2016
+    
