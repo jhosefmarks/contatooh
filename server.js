@@ -1,10 +1,11 @@
 /*globals require, console */
 
 var http = require('http'),
-    app = require('./config/express')();
+    app = require('./config/express')(),
+    config = require('./config/config')();
 
 require('./config/passport')();
-require('./config/database')('mongodb://localhost/contatooh');
+require('./config/database')(config.db);
 
 /* 1º Passo
 http.createServer(function (req, res) {

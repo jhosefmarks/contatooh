@@ -1,9 +1,20 @@
 language: node_js
 
+notifications:
+    email: jhosef@gmail.com
+
 node_js:
     - 0.10
-notifications:
-    - jhosef@gmail.com
+
+services:
+    - mongodb
+
+env:
+    global:
+        - NODE_ENV: test
+
+addons:
+    sauce_connect: true
 
 before_install:
     - npm install -g bower
@@ -14,8 +25,11 @@ before_install:
     - bower install
 
 before_script:
+    - node test/data.js
     - grunt
     - cd dist
 
 script:
     - karma start config/karma.config.js --single-run --browsers PhantomJS
+    - node server &
+    - protractor config/protractor.js
