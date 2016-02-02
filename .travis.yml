@@ -20,7 +20,7 @@ before_install:
     - npm install -g bower
     - npm install -g grunt-cli
     - npm install -g karma-cli
-    - npm install -g protractor@1.5
+    - npm install -g protractor
     - webdriver-manager update
     - bower install
 
