@@ -4,7 +4,7 @@ notifications:
     email: jhosef@gmail.com
 
 node_js:
-    - 0.10
+    - "iojs"
 
 services:
     - mongodb
@@ -31,5 +31,5 @@ before_script:
 
 script:
     - karma start config/karma.config.js --single-run --browsers PhantomJS
-    - node server &H+$1pnmdq2v2016
-    
+    - node server &
+    - protractor config/protractor.js
