@@ -51,15 +51,20 @@ angular.module('meusComponentes', [])
         directive.restrict = 'A';
 
         directive.scope = {
-            focus: '='
+            //focus: '='
+            evento: '@'
         };
     
         directive.link = function (scope, element) {
-            scope.$watch('focus', function () {
+            /*scope.$watch('focus', function () {
                 if (scope.focus) {
                     element[0].focus();
                     scope.focus = false;
                 }
+            });*/
+
+            scope.$on(scope.evento, function () {
+                element[0].focus();
             });
         };
 
