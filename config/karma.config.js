@@ -1,4 +1,4 @@
-﻿// Karma configuration
+// Karma configuration
 // Generated on Wed Jan 13 2016 23:59:25 GMT-0200 (Horário brasileiro de verão)
 
 /*global module */
@@ -24,6 +24,7 @@ module.exports = function (config) {
             '../public/js/main.js',
             '../public/js/controllers/**/*.js',
             '../public/js/services/**/*.js',
+            '../public/js/directives/**/*.js',
             '../test/spec/**/*Spec.js'
         ],
 

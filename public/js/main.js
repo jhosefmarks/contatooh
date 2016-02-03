@@ -1,6 +1,6 @@
 /*globals angular */
 
-angular.module('contatooh', ['ngRoute', 'ngResource'])
+angular.module('contatooh', ['ngRoute', 'ngResource', 'meusComponentes'])
     .config(function ($routeProvider, $httpProvider) {
         'use strict';
 
