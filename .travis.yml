@@ -1,51 +1,40 @@
 language: node_js
-
 notifications:
-    email: jhosef@gmail.com
-
+  email: jhosef@gmail.com
 node_js:
-    - iojs
-
+- iojs
 services:
-    - mongodb
-
+- mongodb
 env:
-    global:
-        - NODE_ENV: test
-
+  global:
+  - NODE_ENV: test
 addons:
-    sauce_connect: true
-
+  sauce_connect: true
 before_install:
-    - npm install -g bower
-    - npm install -g grunt-cli
-    - npm install -g karma-cli
-    - npm install -g protractor@1.5
-    - webdriver-manager update
-    - bower install
-
+- npm install -g bower
+- npm install -g grunt-cli
+- npm install -g karma-cli
+- npm install -g protractor@1.5
+- webdriver-manager update
+- bower install
 before_script:
-    - node test/data.js
-    - grunt minifica
-
+- node test/data.js
+- grunt minifica
 script:
-    - karma start config/karma.config.js --single-run --browsers PhantomJS
-    - node server &
-    - protractor config/protractor.js
-
+- karma start config/karma.config.js --single-run --browsers PhantomJS
+- node server &
+- protractor config/protractor.js
 before_deploy:
-    - git config --global user.email 'travis@travis-ci.com'
-    - git config --global user.name 'Travis CI'
-    - git checkout $TRAVIS_BRANCH
-    - git add --all
-    - git commit -am "Travis commit"
-
+- git config --global user.email 'travis@travis-ci.com'
+- git config --global user.name 'Travis CI'
+- git checkout $TRAVIS_BRANCH
+- git add --all
+- git commit -am "Travis commit"
 deploy:
-    provider: openshift
-    user: jhosef@gmail.com
-    password:
-        secure: eA1WvMIDtRVhXx1iKCq5/AWW3vC1rz9vybz3vRavCKjaW5xm7AlmrJn1CcMZZHjF4qDgy/OtFCM+fL2mb+SLverdsDyJuNJ1f/UymPpn3266nJFJFaweF3RmgOW6kUX6AUkwhAlyCUYsolaVHmT5UmBb1LYFYb/3w364Hw3rPdq4CdDbCaX0zk5orVlBAH5HJJdWYA1gHKv0PF6mpNKmwfeMzgJR0pqt7dHdeoL6G6SmfkYrLJI1pXhglnBlAE4ffbzgCiJmDJjB6wkSSwU2+eKWw5QR+WA69t+B6f1lOEukN7LoqwcV6sug35mH6ezwIYNQORjN8ouhsItWeQ2Ghu9O1G/tPUoANAs0l5j5f2ZGX1nYreSbrQQT9uEsA26FqBiWfMnqY17klyxWw4Uhf2FIiiDBtzUhKLl1Bi++zGbZLgZNGStdcbuYHJh+5MYJOITLcCzCDQ8w/3TWjRftGL3oGR51buyfe9DWk1uHR4a2ytky+u8x335m2wb6yNQ0uOubemqzs1gTBrnzKX/OZDkbAntKZhMVbsVXREso9Ah06dv+lADQ5EmRS+aZ9DAney3lgBZHl6rtB2jtERFDKBkN3qwQmneV9PF8YpIAJhTWQhSVGMxe95K3Y98a7US9+mhn66e+QZswLDRSgJxhTGhWdNhRTEPpqPqtESgZZ5s=
-    app: contatooh
-    domain: contatooh-jhosefmarks.rhcloud.com
-    on:
-        repo: jhosefmarks/contatooh
+  provider: openshift
+  user: jhosef@gmail.com
+  password: testandoOS2016
+  app: contatooh
+  domain: contatooh-jhosefmarks.rhcloud.com
+  on:
+    repo: jhosefmarks/contatooh
