@@ -33,7 +33,8 @@ before_deploy:
 deploy:
   provider: openshift
   user: jhosef@gmail.com
-  password: testandoOS2016
+  password:
+    secure: GVSO7aA4OfuhomdBX0rMGDThSpwpkLbR6g0QUwLp458OIec90y1f64SGng3QE8tzt0wqafzj8z63weGJ/x3l3y0nVWa0jJN0/vr0stj+EGKzry4iag5UPMrkCFAFI6IGvf/B8U1c/iulbjYZjbQX9qU4R9uQA+f5i+wyhlFcMBdsIAm7H3e43mUioWw4w5eZcqPznxQ9TQXeYtnCyMNbriw9EPWH0f6UD+NiVXWW+V6B5uI2U5ay3MvykzfThRoYVePZ4EdhZYngW9ie71L0pTqZmp74eAw7OyyMrqhbOep30LkZP+qauQUHE/p5b4A6c9gPL4fYforOLl939M5d0M+ZP2mIAipQvgHcN5VbPKaHY0JAiuV1FIl/BKbPDmCKWKqLuSZ302dV22NKl5ZaiX+JAt2ucHPUsB9TAltsQgDVVpwK7AbpVYBK4fTMs+W8lawupDAlTxj4JwDYcvKv2TScxC0V+f3sbnlzilwtNTvL4Ds+m69dlo2LOmre+mhBqqAX5oTAhSpMWClg5tmwxdDfSf7eOo1TPHq8s63BKGMEpQK14+RRpQ3bYH0ye7DEnhAsdkpJ80fFf7up5KJ/aqixxhnrQk4YQw8loECfgj5klL44/SjWNUPO4nC6K86D80jdfQ/pIkgkw1trFQH9OpVrNmLo7L190ScmrMy/7Qk=
   app: contatooh
   domain: jhosefmarks
   on:
