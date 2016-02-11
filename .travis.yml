@@ -4,7 +4,7 @@ notifications:
     email: jhosef@gmail.com
 
 node_js:
-    - "iojs"
+    - iojs
 
 services:
     - mongodb
@@ -26,10 +26,26 @@ before_install:
 
 before_script:
     - node test/data.js
-    - grunt
-    - cd dist
+    - grunt minifica
 
 script:
     - karma start config/karma.config.js --single-run --browsers PhantomJS
     - node server &
     - protractor config/protractor.js
+
+before_deploy:
+    - git config --global user.email 'travis@travis-ci.com'
+    - git config --global user.name 'Travis CI'
+    - git checkout $TRAVIS_BRANCH
+    - git add --all
+    - git commit -am "Travis commit"
+
+deploy:
+    provider: openshift
+    user: jhosef@gmail.com
+    password:
+        secure: Wq1SHXrs97OghBIOMONtnT8eK31m5mOwb2/dS52ZS2ui/CbSVOU5nFh4lqpo8bEbi3aZlqSQ7lU3TB0xrWUldgu3pNScHTMZeGSWnYBxCUbqt5nTocQjPG3omJuKvp0nodgdRAKk+NKsmPRSbd9irHNqem65vSbKEZbZZ0PC25U7lN5jGHQXuKwnXnTnc0SxdJJ1XossEV2fyyEwkvhZsDo7Wcth7amNOghOq5Yv4Pl+cKxsv2E0qBcfrPSEVGPLsAQaoMp/gQcDR7d2LSKiZiqZBqubbhuJDIhBfGsQ6crFZTlWrDZv1rR1ODCagECxgr2MdBUfDmO5BCF823dMYaiFdgaciO2qWA9bYxRWhHxd1mIWNHH2knxNVzB7dwdehrzJ45eRL1lwMA22wbvNaLRT9g+KV8paMlkiPgfbemz+UUNJUIPJQGm0OhVBsMTheTskpzYfPk8xG3CCevAIxrrQnbY3zaCU0FQCrnrcHPwSqtKlfYiUNCluuIOOMcYZV5kMRWhBadkYqeRbFzKka7zOGpIm7ykK9flaGULN2xLycO+aLSKWW21L2+VRnGHg3JnEgmZ2Tyu5mKSOh6VnLYZ+aGPBhFIFwJBHwp56n1MCDV3243LB/fp+jesX2bCAHu2Q+ZUPP3lHT109EhB6QZbd/RVccVCyApHxkl+x9o8=
+    app: contatooh
+    domain: http://contatooh-jhosefmarks.rhcloud.com
+    on:
+        repo: jhosefmarks/contatooh
