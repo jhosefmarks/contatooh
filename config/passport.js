@@ -9,7 +9,14 @@ module.exports = function () {
     'use strict';
 
     var Usuario = mongoose.model('Usuario'),
+        githubCallback;
+
+    if (config.port !== 8080) {
         githubCallback = 'http://' + config.domain + ':' + config.port + '/auth/github/callback';
+    } else {
+        githubCallback = 'http://' + config.domain + '/auth/github/callback';
+    }
+    console.log('githubCallback: ', githubCallback);
 
     passport.use(new GitHubStrategy({
         clientID: config.clientID,
