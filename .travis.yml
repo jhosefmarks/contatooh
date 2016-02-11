@@ -35,6 +35,6 @@ deploy:
   user: jhosef@gmail.com
   password: testandoOS2016
   app: contatooh
-  domain: contatooh-jhosefmarks.rhcloud.com
+  domain: http://contatooh-jhosefmarks.rhcloud.com/
   on:
     repo: jhosefmarks/contatooh
